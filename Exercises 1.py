@@ -13,9 +13,9 @@ def give_grade(n, maximum=20):
 
 def min_points(grade, maximum=20):
     """Returns the minimum number of points you need for the given grade."""
-    if grade <= 0:
+    if grade < 0:
         return 0
-    if grade >= 5:
-        return ceil(0.9 * maximum)
-    x = float(grade + 4) / 10
-    return ceil(x * maximum)
+    for i in range(0, maximum):
+        if grade == give_grade(i, maximum):
+            return i
+    return ceil(0.9 * maximum)
