@@ -61,3 +61,30 @@ print("Optimal solution by golden section search: " + str(golden(func, 0, 2, 0.0
 
 
 # 4:
+# Use differentiation to find solutions to the problems in 1 and 2.
+#
+# Solution:
+# 1.
+# F(x) = (1 - 0.01*x)*x - (2 - 0.01*x**2)*x
+#      = x - 0.01*x**2 - 2*x + 0.01*x**3
+#      = -x - 0.01x**2 + 0.01*x**3
+#
+# Find the roots of the derivative function:
+# F'(x) = -1 - 0.02*x + 0.03*x**2 = 0
+# <=> x = (0.02 (+/-) sqrt(0.02**2 - 4*0.03*(-1)))/(2*0.03)
+# <=> x = 6.12 OR x = -5.45
+#
+# interval between the roots of derivative and increasing after that.
+# Thus the minimum solution is at the point x = 6.12. This solution is feasible so
+# it is also the optimal solution. The value in that point is F(6.12) = -4.2.
+#
+# 2.
+# f(x) = (1-x)**2 + x
+# f'(x) = 2*(1-x)*(-1) + 1
+#       = 2*x - 1
+#
+# Find the roots of the derivative function:
+# f'(x) = 0  <=>  x = 0.5
+#
+# The minimal solution is x = 0.5. This is also feasible so it is the optimal solution.
+# The value in this solution is f(0.5) = 0.75.
